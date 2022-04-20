@@ -1,4 +1,4 @@
-export function useEffectOnceWhen(condition, func) {
+export function useEffectOnceWhen(condition, func, deps) {
     const [finished, setFinished] = useState(false);
     useEffect(() => {
         if (finished) {
@@ -9,5 +9,5 @@ export function useEffectOnceWhen(condition, func) {
         }
         setFinished(true);
         func();
-    }, [func, condition, finished, setFinished]); 
+    }, [func, condition, finished, setFinished, ...deps]); 
 }
