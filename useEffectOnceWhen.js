@@ -9,5 +9,5 @@ export function useEffectOnceWhen(condition, func, deps) {
         }
         setFinished(true);
         func();
-    }, [...deps]); 
+    }); 
 }
