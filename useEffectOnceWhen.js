@@ -1,13 +1,15 @@
-export function useEffectOnceWhen(condition, func, deps) {
-    const [finished, setFinished] = useState(false);
+export function useEffectOnceWhen(condition, func) {
+    const isExecuted = useRef(false);
+
     useEffect(() => {
-        if (finished) {
+        if (isExecuted.current) {
             return;
         }
         if (!condition) {
             return;
         }
-        setFinished(true);
+        isExecuted.current = true;
         func();
-    }); 
+    },[condition]); 
 }
+
