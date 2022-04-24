@@ -19,6 +19,7 @@ export default function useMemoWithCache(fnc, dependencies) {
 }
 
 /*
+
 Example:
 
 export default function Sample() {
@@ -43,8 +44,5 @@ export default function Sample() {
         </>
     )
 }
-
-
-
 
 */
