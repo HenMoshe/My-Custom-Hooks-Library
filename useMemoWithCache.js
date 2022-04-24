@@ -5,7 +5,7 @@ export default function useMemoWithCache(fnc, dependencies) {
     const cache = useRef({});
 
     useEffect(() => {
-        const stringifiedDeps = dependencies.join();
+        const stringifiedDeps = JSON.stringify(dependencies);
 
         if (cache[stringifiedDeps])
             setResult(cache[stringifiedDeps]);
