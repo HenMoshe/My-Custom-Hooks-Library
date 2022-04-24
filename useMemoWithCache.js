@@ -15,6 +15,7 @@ export default function useMemoWithCache(fnc, dependencies) {
             setResult(tempResult);
         }
     }, dependencies)
+    
     return result;
 }
 
